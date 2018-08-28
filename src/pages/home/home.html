@@ -5,52 +5,23 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content>
 
-  <!-- Beginning of the category card -->
-  <div class="padding_helper" color="white" (click)="CategoryTapped()">
-    <div class="category__image">
-        <div class="text-center image__padding">
-          <p class="section__headline">
-              The Stuff
-          </p>
-          <p class="nomargin category__headline">
-              Pineapple
-          </p>
-        </div>
-    </div>
-  </div>
-  <!-- End of the category card -->
 
-  <!-- Beginning of the category card -->
-  <div class="padding_helper" color="white" (click)="CategoryTapped_2()">
-    <div class="category__image2">
-        <div class="text-center image__padding">
-          <p class="section__headline">
-              The breakfast
-          </p>
-          <p class="nomargin category__headline">
-              Eggs on a pan
-          </p>
-        </div>
-    </div>
-  </div>
-  <!-- End of the category card -->
+  <!-- List Code -->
+  <ion-list>
 
-  <!-- Beginning of the category card -->
-  <div class="padding_helper" color="white" (click)="CategoryTapped_3()">
-    <div class="category__image3">
-        <div class="text-center image__padding">
-          <p class="section__headline">
-              The snacks
-          </p>
-          <p class="nomargin category__headline">
-              Burger
-          </p>
-        </div>
-    </div>
-  </div>
-  <!-- End of the category card -->
+    <ion-item *ngFor="let item of news" (click)="itemTapped($event, item)">
+        <ion-avatar item-left>
+          <img src="{{ item.thumbnail }}" class="img">
+        </ion-avatar>
+        <h2>{{ item.title }}</h2>
+        <!-- <p>{{ item.category }}</p>-->
+        <p>{{ item.sourceDomain}}</p> 
+    </ion-item>
+
+  </ion-list>
+  <!-- End of List Code -->
+
 
 </ion-content>
